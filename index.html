@@ -33,29 +33,30 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
-  <div id="xaccel"></div>
-  <div id="yaccel"></div>
-  <div id="zaccel"></div>
-  <div class="app">
-  <h1 style="padding-top: 10%">Dog Years Calulator</h1>
-  <input id="hundealter" type="number">
-  <button id="calcbtn">Berechne</button>
-  <div id="menschenalter"></div>
+<div id="xaccel"></div>
+<div id="yaccel"></div>
+<div id="zaccel"></div>
+<div class="app">
+<h1 style="padding-top: 10%">Dog Years Calulator</h1>
+<input id="hundealter" type="number">
+<button id="calcbtn">Berechne</button>
+<div id="menschenalter"></div>
+</div>
 <script>	
   document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady() {
+  function onDeviceReady() {
 
-window.addEventListener('devicemotion', function(event) {
-//Momentane Beschleunigungen anzeigen
-$("#xaccel").html(Math.round(event.acceleration.x));
-$("#yaccel").html(Math.round(event.acceleration.y));
-$("#zaccel").html(Math.round(event.acceleration.z));
-/*
-//Bild wechseln bei genügend großer Beschleunigung
-if ((Math.abs(event.acceleration.x) + Math.abs(event.acceleration.y) + Math.abs(event.acceleration.z)) > 50) {
-$(".app").css("background", "url('img/dog-cartoon-3.jpg') no-repeat center top");
-}
+  window.addEventListener('devicemotion', function(event) {
+  //Momentane Beschleunigungen anzeigen
+  $("#xaccel").html(Math.round(event.acceleration.x));
+  $("#yaccel").html(Math.round(event.acceleration.y));
+  $("#zaccel").html(Math.round(event.acceleration.z));
+  /*
+  //Bild wechseln bei genügend großer Beschleunigung
+  if ((Math.abs(event.acceleration.x) + Math.abs(event.acceleration.y) + Math.abs(event.acceleration.z)) > 50) {
+  $(".app").css("background", "url('img/dog-cartoon-3.jpg') no-repeat center top");
+  }
 */
 });
 }
